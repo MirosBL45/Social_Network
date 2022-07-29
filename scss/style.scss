@@ -1,0 +1,303 @@
+@import 'media';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    @include odaziv(tab-land) {
+        font-size: 75%; //12px=1rem; 12/16px=75%
+    }
+
+    @include odaziv(tab-port) {
+        font-size: 62.5%; //1rem=10px 10px/16px=62.5%
+    }
+
+    @include odaziv(phone) {
+        font-size: 56.25%; //9px=1rem; 9/16px=56.25%
+    }
+}
+
+body {
+    font-family: sans-serif;
+    padding: 3.12rem;
+    background-image: url('../img/bg.jpg');
+    background-size: cover;
+    color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.7) 0 0 0 10000px inset;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 6.25rem;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 3.12rem;
+}
+
+button {
+    cursor: pointer;
+}
+
+form {
+    ul {
+        list-style-type: none;
+
+        li {
+            color: red;
+        }
+    }
+}
+
+.main_wraper {
+    max-width: 40.62rem;
+    margin: auto;
+    padding: 3.12rem;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 0.7rem;
+
+    form {
+
+        div {
+            padding: 1rem 0;
+
+            label {
+                display: block;
+                font-weight: bold;
+                font-size: 1rem;
+                margin-bottom: 0.2rem;
+            }
+
+            input {
+                height: 3.12rem;
+                width: 100%;
+                font-size: 1.12rem;
+                padding: 0 0.62rem;
+            }
+
+            button {
+                padding: 0.62rem 1.87rem;
+                font-size: 1.12rem;
+            }
+        }
+    }
+}
+
+.no_acc_register {
+    text-align: center;
+    margin-top: 3.12rem;
+
+    p {
+        font-size: 1.37rem;
+        margin-bottom: 0.93rem;
+    }
+
+    button {
+        padding: 0.93rem;
+        font-size: 1.12rem;
+    }
+}
+
+.custom_modal {
+    display: none;
+    background-color: black;
+    box-shadow: rgba(255, 255, 255, 0.8) 0 0 1000px 1000px;
+    max-width: 40.62rem;
+    margin: auto;
+    padding: 3.12rem;
+    border-radius: 0.7rem;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    h2 {
+        margin-bottom: 1.7rem;
+    }
+
+    form {
+
+        label {
+            display: block;
+            font-weight: bold;
+            font-size: 1rem;
+            margin: 1.5rem 0 0.2rem;
+        }
+
+        input {
+            height: 3.12rem;
+            width: 100%;
+            font-size: 1.12rem;
+            padding: 0 0.62rem;
+        }
+
+        button {
+            margin-top: 1rem;
+            padding: 0.62rem 1.87rem;
+            font-size: 1.12rem;
+        }
+
+    }
+
+    #closeModal {
+        height: 1.25rem;
+        width: 1.25rem;
+        color: #fff;
+        background-color: transparent;
+        border: 0;
+        font-size: 1.56rem;
+        font-weight: bold;
+        position: absolute;
+        right: 1.87rem;
+        top: 1.87rem;
+    }
+}
+
+.inner-container {
+    border: 1px solid green;
+    padding: 1rem;
+
+    img.profile {
+        width: 70%;
+        border-radius: 50%;
+        display: block;
+        margin: auto;
+        border: 0.31rem solid white;
+        margin-bottom: 1.25rem;
+    }
+}
+
+.inner-container.left-side {
+    text-align: center;
+}
+
+.inner-container.right-side form {
+    display: flex;
+    // justify-content: space-between;
+    height: 6.25rem;
+
+    textarea {
+        width: 85%;
+        border: 0;
+        padding: 0.62rem;
+        resize: none;
+        outline-color: green;
+    }
+
+    button {
+        width: 15%;
+        border: 0;
+    }
+}
+
+#obrisiProfil {
+    padding: 0.31rem 0.93rem;
+    border: 2px solid red;
+    color: red;
+}
+
+#allPostWrapper {
+    .single-post {
+        background-color: hsl(0, 0%, 92%);
+        padding: 0.93rem;
+        margin-top: 0.93rem;
+        color: hsl(0, 0%, 0%);
+
+        .post-actions {
+            display: flex;
+            justify-content: space-between;
+            color: gray;
+
+            button.like_comment {
+                padding: 0.31rem 0.93rem 0.31rem 2.5rem;
+                background-repeat: no-repeat;
+                background-position: 0.62rem;
+                border: 0;
+
+                @include odaziv(tab-land) {
+                    background-size: 20%; //12px=1rem; 12/16px=75%
+                }
+            }
+
+            button.like-btn {
+                background-image: url('/img/like.png');
+            }
+
+            button.comment-btn {
+                background-image: url('/img/comment.png');
+            }
+
+            button.remove-btn {
+                border-color: red;
+                color: rgb(255, 0, 0);
+                padding: 0.31rem 0.93rem;
+            }
+        }
+
+        .post-content {
+            padding-bottom: 0.62rem;
+            border-bottom: 1px solid black;
+            margin-bottom: 0.62rem;
+            font-size: 1.37rem;
+        }
+    }
+
+    .post-comments {
+        display: none;
+
+        form {
+            height: 1.87rem;
+            margin-top: 0.93rem;
+
+            input {
+                width: 75%;
+                padding: 0 0.62rem;
+                margin-right: 0.31rem;
+            }
+
+            button {
+                width: 20%;
+                background-color: hsl(0, 0%, 50%);
+                transition: 0.2s;
+            }
+
+            button:hover {
+                background-color: hsl(0, 0%, 43%);
+            }
+        }
+
+        .single-comment {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px dotted green;
+            padding: 0.3rem;
+            margin-top: 0.62rem;
+
+            .levo {
+                padding-left: 1rem;
+            }
+
+            .desno {
+                font-size: 0.8rem;
+                font-style: italic;
+                padding-right: 1rem;
+            }
+        }
+    }
+}
+
+#editAccount,
+#logout {
+    padding: 0.1rem 0.3rem;
+    margin: 0.1rem 0;
+}
